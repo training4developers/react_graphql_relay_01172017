@@ -1,18 +1,14 @@
 import '../css/styles.scss';
 
 import React from 'react';
-import Relay from 'react-relay';	
 import ReactDOM from 'react-dom';
 
-import { WidgetToolContainer } from './containers/widget-tool-container';
-//import { BookToolContainer } from './containers/book-tool-container';
-import { ViewerRoute } from './routes/viewer-route';
+class App extends React.Component {
 
-ReactDOM.render(<Relay.RootContainer Component={WidgetToolContainer} route={new ViewerRoute()} />,
-	document.querySelector('main'));
+    render() {
+        return <h1>Welcome to React/GraphQL/Relay!</h1>;
+    }
 
-// ReactDOM.render(<Relay.Renderer
-// 	Container={BookToolContainer}
-// 	queryConfig={new ViewerRoute()}
-// 	environment={Relay.Store}
-//  />, document.querySelector('main'));
+}
+
+ReactDOM.render(<App />, document.querySelector('main'));
