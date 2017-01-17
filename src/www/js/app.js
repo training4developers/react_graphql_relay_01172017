@@ -8,7 +8,25 @@ import ReactDOM from 'react-dom';
 class App extends React.Component {
 
     render() {
-        return <h1>{this.props.message}</h1>;
+        return <div>
+            <h1>{this.props.message}</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.props.books.map(book => <tr>
+                        <td>{book.title}</td>
+                        <td>{book.category}</td>
+                        <td>{book.price}</td>
+                    </tr>)}
+                </tbody>
+            </table>
+        </div>;
     }
 }
 
@@ -17,7 +35,8 @@ class AppContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            message: ''
+            message: '',
+            books: []
         };
     }    
 
@@ -25,18 +44,19 @@ class AppContainer extends React.Component {
         fetch('http://localhost:3000/graphql', {
             method: 'POST',
             headers: new Headers({ 'content-type': 'application/json'}),
-            body: '{"query":"query { message }","variables":null}'
+            body: '{"query":"query { message, books { title, category, price } } ","variables":null}'
         })
         .then(res => res.json())
         .then(results => {
             this.setState({
-                message: results.data.message
+                message: results.data.message,
+                books: results.data.books
             });
         });
     }    
 
     render() {
-        return <App message={this.state.message} />;
+        return <App message={this.state.message} books={this.state.books} />;
     }
 
 }
