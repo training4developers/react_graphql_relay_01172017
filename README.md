@@ -75,7 +75,7 @@ On Windows, the terminal is called "Node.js Command Prompt". This will command p
 Step 4. From the terminal, run the following command:
 
 ```bash
-$ npm i && npm start
+npm i && npm start
 ```
 
 It will take a few minutes for this command to complete. If you have connection issues due to a proxy server, please edit the **.npmrc** file per the instructions in that file. Then re-run the command above.
