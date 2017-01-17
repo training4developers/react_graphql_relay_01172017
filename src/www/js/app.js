@@ -3,14 +3,23 @@ import '../css/styles.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
+
 class App extends React.Component {
+
+    render() {
+        return <h1>{this.props.message}</h1>;
+    }
+}
+
+class AppContainer extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             message: ''
         };
-    }
+    }    
 
     componentDidMount() {
         fetch('http://localhost:3000/graphql', {
@@ -24,14 +33,15 @@ class App extends React.Component {
                 message: results.data.message
             });
         });
-    }
+    }    
 
     render() {
-        return <h1>{this.state.message}</h1>;
+        return <App message={this.state.message} />;
     }
+
 }
 
-ReactDOM.render(<App />, document.querySelector('main'));
+ReactDOM.render(<AppContainer />, document.querySelector('main'));
 
 // fetch('http://localhost:3000/graphql', {
 //     method: 'POST',
