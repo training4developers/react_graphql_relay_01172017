@@ -4,6 +4,27 @@ import {
     GraphQLID, GraphQLFloat, GraphQLList
 } from 'graphql';
 
+export const authorType = new GraphQLObjectType({
+
+    name: 'Author',
+    description: 'An author type',
+    fields: () => ({
+        id: {
+            type: GraphQLID,
+            description: 'Id of author'
+        },
+        firstName: {
+            type: GraphQLString,
+            description: 'First name  of the author'
+        },
+        lastName: {
+            type: GraphQLString,
+            description: 'Las name  of the author'
+        }
+    })
+
+});
+
 export const bookType = new GraphQLObjectType({
 
     name: 'Book',
@@ -24,6 +45,13 @@ export const bookType = new GraphQLObjectType({
         price: {
             type: GraphQLFloat,
             description: 'Price of the book'
+        },
+        author: {
+            type: authorType,
+            description: 'Author of the book',
+            resolve: ({ authorId }, _, { baseUrl }) =>
+                fetch(`${baseUrl}/authors/${authorId}`)
+                    .then(res => res.json())
         }
     })
 });
@@ -43,6 +71,13 @@ export const query = new GraphQLObjectType({
             description: 'A list of books',
             resolve: () =>
                 fetch('http://localhost:3010/books')
+                    .then(res => res.json())
+        },
+        authors: {
+            type: new GraphQLList(authorType),
+            description: 'A list of authors',
+            resolve: () =>
+                fetch('http://localhost:3010/authors')
                     .then(res => res.json())
         }
     })

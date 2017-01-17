@@ -48,10 +48,25 @@ class AppContainer extends React.Component {
     }    
 
     componentDidMount() {
+
+        const query = `
+            query {
+                message
+                books {
+                    id 
+                    title 
+                    category 
+                    price
+                }
+            }
+        `;
+
+        const variables = null;
+
         fetch('http://localhost:3000/graphql', {
             method: 'POST',
             headers: new Headers({ 'content-type': 'application/json'}),
-            body: '{"query":"query { message, books { id, title, category, price } } ","variables":null}'
+            body: JSON.stringify({ query, variables })
         })
         .then(res => res.json())
         .then(results => {
