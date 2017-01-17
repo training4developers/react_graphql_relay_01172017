@@ -3,9 +3,16 @@ import '../css/styles.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-
-
 class App extends React.Component {
+
+    static propTypes = {
+        message: React.PropTypes.string,
+        books: React.PropTypes.arrayOf(
+            React.PropTypes.shape({
+                id: null, title: null, category: null, price: null 
+            })
+        )
+    };
 
     render() {
         return <div>
@@ -19,7 +26,7 @@ class App extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.props.books.map(book => <tr>
+                    {this.props.books.map(book => <tr key={book.id}>
                         <td>{book.title}</td>
                         <td>{book.category}</td>
                         <td>{book.price}</td>
@@ -44,7 +51,7 @@ class AppContainer extends React.Component {
         fetch('http://localhost:3000/graphql', {
             method: 'POST',
             headers: new Headers({ 'content-type': 'application/json'}),
-            body: '{"query":"query { message, books { title, category, price } } ","variables":null}'
+            body: '{"query":"query { message, books { id, title, category, price } } ","variables":null}'
         })
         .then(res => res.json())
         .then(results => {
