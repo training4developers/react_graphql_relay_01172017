@@ -6,7 +6,7 @@
 		"jest": true,
 		"commonjs": true
 	},
-	"extends": ["eslint:recommended","plugin:react/recommended"],
+	"extends": [ "eslint:recommended", "plugin:react/recommended" ],
 	"parser": "babel-eslint",
 	"parserOptions": {
 		"ecmaFeatures": {
@@ -15,11 +15,9 @@
 		},
 		"sourceType": "module"
 	},
-	"plugins": [
-		"react"
-	],
+	"plugins": [ "react" ],
 	"rules": {
-		"indent": ["error", "tab", { "SwitchCase": 1 }],
+		"indent": ["error", 4, { "SwitchCase": 1 }],
 		"quotes": ["error", "single"],
 		"semi": ["error", "always"],
 		"no-console": 0,

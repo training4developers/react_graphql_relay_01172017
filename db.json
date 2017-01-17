@@ -49,14 +49,6 @@
       "size": "tiny",
       "quantity": 10,
       "ownerId": 3
-    },
-    {
-      "name": "Alex",
-      "description": "Alex is a nice and kind person.",
-      "color": "orange",
-      "size": "medium",
-      "quantity": 12,
-      "id": 5
     }
   ],
   "people": [

@@ -11,7 +11,7 @@
     "webpack": "webpack --config ./config/webpack.dev.js --watch",
     "webpack-once": "webpack --config ./config/webpack.dev.js",
     "server": "babel ./src --presets es2015,stage-0 --out-dir ./dist --source-maps --ignore www",
-    "update-schema": "babel-node --presets es2015,stage-0 ./scripts/updateSchema.js",
+    "update-schema": "babel-node --presets es2015,stage-0 ./scripts/update-schema.js",
     "rest": "json-server --watch --port 3010 db.json"
   },
   "repository": {
@@ -44,8 +44,8 @@
     "bootstrap-loader": "^1.2.0-beta.1",
     "css-loader": "^0.26.1",
     "es6-promise": "^4.0.5",
-    "eslint": "^3.0.1",
-    "eslint-plugin-react": "^6.1.1",
+    "eslint": "^3.13.1",
+    "eslint-plugin-react": "^6.9.0",
     "exports-loader": "^0.6.3",
     "express": "^4.14.0",
     "express-graphql": "^0.6.1",
@@ -57,11 +57,11 @@
     "html-webpack-plugin": "^2.22.0",
     "imports-loader": "^0.7.0",
     "node-fetch": "^1.6.3",
-    "node-sass": "^4.1.1",
+    "node-sass": "^4.3.0",
     "null-loader": "^0.1.1",
     "pluralize": "^3.0.0",
-    "postcss": "^5.0.21",
-    "postcss-loader": "^1.2.1",
+    "postcss": "^5.2.10",
+    "postcss-loader": "^1.2.2",
     "raw-loader": "^0.5.1",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
@@ -71,7 +71,7 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
-    "webpack-merge": "^2.3.1",
+    "webpack-merge": "^2.4.0",
     "whatwg-fetch": "^2.0.1"
   },
   "webServer": {

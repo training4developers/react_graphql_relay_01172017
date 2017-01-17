@@ -19,13 +19,15 @@ Eric Greene - [http://t4d.io](http://t4d.io) - [LinkedIn](https://www.linkedin.c
 ## Schedule
 
 Class:
-- Tuesday - Thursday: 9:00am to 4:30pm
+- Tuesday - Thursday: 9:15am to 4:30pm (end at 4pm on Thursday)
 
 Breaks:
-- Morning: 10:25am to 10:35am
+- Morning: 10:35am to 10:45am
 - Lunch: Noon to 1pm
 - Afternoon #1: 2:05pm to 2:15pm
 - Afternoon #2: 3:20pm to 3:30pm
+
+After Class Questions until 5pm
 
 ## Course Outline
 
