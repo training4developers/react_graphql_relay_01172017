@@ -1,6 +1,6 @@
-# Welcome to Intermediate GraphQL & Relay!
+# Welcome to React, GraphQL & Relay
 
-## Prerequisites 
+## Prerequisites
 
 Students should have experience in developing React components. We will not be covering the basics of JavaScript or React in the class.
 
@@ -19,9 +19,11 @@ Eric Greene - [http://t4d.io](http://t4d.io) - [LinkedIn](https://www.linkedin.c
 ## Schedule
 
 Class:
+
 - Tuesday - Thursday: 9:15am to 4:30pm (end at 4pm on Thursday)
 
 Breaks:
+
 - Morning: 10:35am to 10:45am
 - Lunch: Noon to 1pm
 - Afternoon #1: 2:05pm to 2:15pm
@@ -90,14 +92,14 @@ This terminal window is now running the web server, a second terminal window wil
 
 Step 5. Open a web browser, and navigate to [http://localhost:3000](http://localhost:3000).  The starter web application should load and be usable.
 
-**To Modify the Web Application**
+#### To Modify the Web Application
 
 Step 6. Open a new terminal window (do not use the same terminal window as the web server), change to the project folder.
 
 Step 7. From the terminal, run the following command:
 
 ```bash
-$ npm run webpack
+npm run webpack
 ```
 
 Note: This command will run, and then wait for file changes to process updated source code from the **src** folder. Webpack does **NOT** exit and return to a terminal prompt. Please do not close this terminal window.
@@ -107,11 +109,11 @@ Step 8. Open your favorite text editor (such as [Atom](https://atom.io/) or [Vis
 Visual Studio Code supports JSX out of the box. Atom requires the **react** package to be installed. To install it from the menu bar, go to Packages -> Settings View -> Install Packages/Themes. Search for **react**, then click **Install** (you may need to scroll down the search results to find the package). Sometimes Atom will not be able to download the package because of proxy settings. To resolve this run the following commands from a terminal window, replacing the localhost URL with your proxy URL setting:
 
 ```bash
-$ apm config set proxy "http://localhost:8080"
+apm config set proxy "http://localhost:8080"
 
-$ apm config set https_proxy "http://localhost:8080"
+apm config set https_proxy "http://localhost:8080"
 
-$ apm config set strict-ssl false
+apm config set strict-ssl false
 ```
 
 Restart Atom, then re-attempt to install the **react** package again.
