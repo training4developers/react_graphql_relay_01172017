@@ -215,6 +215,20 @@
       "price": 1.99,
       "authorId": 1,
       "id": 15
+    },
+    {
+      "title": "Lord of the Rings",
+      "category": "Inspirational",
+      "price": 29.99,
+      "authorId": "2",
+      "id": 16
+    },
+    {
+      "title": "Lord of the Rings",
+      "category": "Inspirational",
+      "price": 29.99,
+      "authorId": "2",
+      "id": 17
     }
   ]
 }
