@@ -1,13 +1,8 @@
 import fetch from 'node-fetch';
-import {
-    GraphQLObjectType, GraphQLString, GraphQLList, GraphQLID,
-    GraphQLEnumType
-} from 'graphql';
+import { GraphQLObjectType, GraphQLString, GraphQLList, GraphQLID } from 'graphql';
 
 import { bookType } from './book-type';
 import { authorType } from './author-type';
-
-
 
 export const query = new GraphQLObjectType({
 
@@ -22,8 +17,8 @@ export const query = new GraphQLObjectType({
         books: {
             type: new GraphQLList(bookType),
             description: 'A list of books',
-            resolve: () =>
-                fetch('http://localhost:3010/books')
+            resolve: (_1, _2, { baseUrl }) =>
+                fetch(`${baseUrl}/books`)
                     .then(res => res.json())
         },
         book: {
@@ -42,8 +37,8 @@ export const query = new GraphQLObjectType({
         authors: {
             type: new GraphQLList(authorType),
             description: 'A list of authors',
-            resolve: () =>
-                fetch('http://localhost:3010/authors')
+            resolve: (_1, _2, { baseUrl }) =>
+                fetch(`${baseUrl}/authors`)
                     .then(res => res.json())
         },
         author: {

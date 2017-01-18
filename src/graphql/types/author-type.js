@@ -1,7 +1,6 @@
 import fetch from 'node-fetch';
 import {
-    GraphQLObjectType, GraphQLString,
-    GraphQLID, GraphQLList
+    GraphQLObjectType, GraphQLString, GraphQLID, GraphQLList, GraphQLInt
 } from 'graphql';
 
 import { bookType } from './book-type';
@@ -35,6 +34,7 @@ export const authorType = new GraphQLObjectType({
                 fetch(`${baseUrl}/books?authorId=${authorId}`)
                     .then(res => res.json())
         }
+
     })
 
 });
