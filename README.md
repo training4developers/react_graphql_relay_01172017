@@ -143,3 +143,10 @@ From a terminal, in the root project folder (where the **package.json** file exi
 - [Webpack](https://webpack.github.io/)
 - [Babel Relay Plugin](https://facebook.github.io/relay/docs/guides-babel-plugin.html)
 - [SASS](http://sass-lang.com/)
+
+
+Romance
+Historical
+Inspirational
+Humor
+Mystery
