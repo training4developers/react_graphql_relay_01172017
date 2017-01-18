@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { BookForm } from './book-form';
+
 export class App extends React.Component {
 
     static propTypes = {
@@ -30,6 +32,7 @@ export class App extends React.Component {
                     </tr>)}
                 </tbody>
             </table>
+            <BookForm />
         </div>;
     }
 }
