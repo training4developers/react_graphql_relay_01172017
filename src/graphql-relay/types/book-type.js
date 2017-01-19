@@ -33,3 +33,4 @@ export const bookType = new GraphQLObjectType({
 const baseUrl = 'http://localhost:3010';
 
 registerType(Book, bookType, id => getBook(baseUrl, id));
+//registerType(Book, bookType, id => Object.assign(new Book(), { id }));
