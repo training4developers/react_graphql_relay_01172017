@@ -112,27 +112,6 @@
   ],
   "books": [
     {
-      "id": 1,
-      "title": "A Time Past",
-      "authorId": 1,
-      "category": "Romance",
-      "price": 9.99
-    },
-    {
-      "id": 2,
-      "title": "The Change",
-      "authorId": 1,
-      "category": "Romance",
-      "price": 8.99
-    },
-    {
-      "id": 3,
-      "title": "The Golden Palace",
-      "authorId": 4,
-      "category": "Historical",
-      "price": 7.99
-    },
-    {
       "id": 4,
       "title": "A Friend's Hope",
       "authorId": 1,
@@ -196,24 +175,10 @@
       "price": 9.99
     },
     {
-      "title": "History of Intuit",
-      "category": "Historical",
-      "price": 299,
-      "authorId": 1,
-      "id": 13
-    },
-    {
-      "title": "History of Intuit",
-      "category": "Historical",
-      "price": 299,
-      "authorId": 1,
-      "id": 14
-    },
-    {
       "title": "History of People",
       "category": "Historical",
-      "price": 1.99,
-      "authorId": 1,
+      "price": 1,
+      "authorId": 2,
       "id": 15
     },
     {
@@ -226,9 +191,23 @@
     {
       "title": "Lord of the Rings",
       "category": "Inspirational",
-      "price": 29.99,
-      "authorId": "2",
+      "price": 29,
+      "authorId": 1,
       "id": 17
+    },
+    {
+      "title": "a",
+      "category": "a",
+      "price": 0,
+      "authorId": -1,
+      "id": 18
+    },
+    {
+      "title": "a",
+      "category": "a",
+      "price": 23,
+      "authorId": -1,
+      "id": 19
     }
   ]
 }

@@ -2,7 +2,8 @@ import http from 'http';
 import express from 'express';
 import graphqlHttp from 'express-graphql';
 
-import { schema } from './graphql/schema';
+// import { schema } from './graphql/schema';
+import { schema } from './graphql-relay/schema';
 
 export default function (config) {
 
