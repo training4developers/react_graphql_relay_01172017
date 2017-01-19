@@ -143,10 +143,8 @@ From a terminal, in the root project folder (where the **package.json** file exi
 - [Webpack](https://webpack.github.io/)
 - [Babel Relay Plugin](https://facebook.github.io/relay/docs/guides-babel-plugin.html)
 - [SASS](http://sass-lang.com/)
-
-
-Romance
-Historical
-Inspirational
-Humor
-Mystery
+- [Learn GraphQL](https://learngraphql.com/)
+- [Learn Relay](https://www.learnrelay.org/)
+- [Resolving GraphQL Circular Type References](http://t4d.io/resolving-graphql-circular-type-references/)
+- [Getting Started with GraphQL and Relay - Part 1](https://www.sitepoint.com/getting-started-with-react-graphql-and-relay-part-1-of-2/)
+- [Getting Started with GraphQL and Relay - Part 2](https://www.sitepoint.com/react-graphql-and-relay-part-2-of-2/)
