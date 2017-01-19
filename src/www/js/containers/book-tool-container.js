@@ -8,7 +8,11 @@ import { DeleteBookMutation } from '../mutations/delete-book-mutation';
 export default Relay.createContainer(BookTool, {
 
     initialVariables: {
-        bookPageSize: 2
+        bookPageSize: 30,
+        beforeBookPageSize: null,
+        beforeBookCursor: null,
+        afterBookPageSize: 30,
+        afterBookCursor: null
     },
 
     fragments: {
@@ -16,8 +20,9 @@ export default Relay.createContainer(BookTool, {
         viewer: () => Relay.QL `
 			fragment on Viewer {
 				id
-				books(first: $bookPageSize) {
+				books(first: $afterBookPageSize last: $beforeBookPageSize after: $afterBookCursor before: $beforeBookCursor) {
 					edges {
+                        cursor
 						node {
 							id
 							title

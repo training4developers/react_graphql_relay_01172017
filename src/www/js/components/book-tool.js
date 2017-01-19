@@ -71,11 +71,42 @@ export class BookTool extends BaseComponent {
         }));
     }
 
-    componentDidMount() {
+    onVariableChange = ({ target }) => {
         this.props.relay.setVariables({
-            bookPageSize: 6
+            [target.name]: target.value,
+            beforeBookPageSize: null,
+            beforeBookCursor: null,
+            afterBookPageSize: target.value,
+            afterBookCursor: null, 
+        });
+    };
+
+    doNext(cursor) {
+        this.props.relay.setVariables({
+            beforeBookPageSize: null,
+            beforeBookCursor: null,
+            afterBookPageSize: this.props.relay.variables.bookPageSize,
+            afterBookCursor: cursor,
         });
     }
+
+    doPrev(cursor) {
+        this.props.relay.setVariables({
+            beforeBookPageSize: this.props.relay.variables.bookPageSize,
+            beforeBookCursor: cursor,
+            afterBookPageSize: null,
+            afterBookCursor: null,
+        });
+    }
+
+    onPrevPage = () => {
+        this.doPrev(this.props.viewer.books.edges[0].cursor);
+    };
+
+    onNextPage = () => {
+        this.doNext(this.props.viewer.books
+            .edges[this.props.viewer.books.edges.length-1].cursor);
+    };
 
     render() {
         return <div className='col-md-12'>
@@ -83,6 +114,14 @@ export class BookTool extends BaseComponent {
                 books={this.props.viewer.books} editBookId={this.state.editBookId}
                 onSave={this.saveBook} onDelete={this.deleteBook}
                 onEdit={this.editBook} onCancelEdit={this.cancelEditBook} />
+
+            <select name="bookPageSize" value={this.props.relay.variables.bookPageSize} onChange={this.onVariableChange}>
+                <option value="2">2</option>
+                <option value="5">5</option>
+            </select>
+
+            <button type="button" onClick={this.onPrevPage}>Prev</button>
+            <button type="button" onClick={this.onNextPage}>Next</button>
         </div>;
     }
 

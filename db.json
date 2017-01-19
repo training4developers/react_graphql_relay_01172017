@@ -126,11 +126,11 @@
       "price": 4.99
     },
     {
-      "id": 6,
       "title": "Forbidden Fellowship",
-      "authorId": 2,
       "category": "Romance",
-      "price": 5.99
+      "price": 5,
+      "authorId": 3,
+      "id": 6
     },
     {
       "id": 7,
@@ -168,11 +168,11 @@
       "price": 4.99
     },
     {
-      "id": 12,
       "title": "History of the Future",
-      "authorId": 4,
       "category": "Historical",
-      "price": 9.99
+      "price": 9,
+      "authorId": 5,
+      "id": 12
     },
     {
       "title": "History of People",
@@ -194,20 +194,6 @@
       "price": 29,
       "authorId": 1,
       "id": 17
-    },
-    {
-      "title": "a",
-      "category": "a",
-      "price": 0,
-      "authorId": -1,
-      "id": 18
-    },
-    {
-      "title": "a",
-      "category": "a",
-      "price": 23,
-      "authorId": -1,
-      "id": 19
     }
   ]
 }
