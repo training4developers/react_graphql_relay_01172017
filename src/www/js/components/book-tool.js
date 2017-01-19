@@ -122,6 +122,7 @@ export class BookTool extends BaseComponent {
 
             <button type="button" onClick={this.onPrevPage}>Prev</button>
             <button type="button" onClick={this.onNextPage}>Next</button>
+            <span>Total Count: {this.props.viewer.books.totalCount}</span>
         </div>;
     }
 

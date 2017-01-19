@@ -21,6 +21,7 @@ export default Relay.createContainer(BookTool, {
 			fragment on Viewer {
 				id
 				books(first: $afterBookPageSize last: $beforeBookPageSize after: $afterBookCursor before: $beforeBookCursor) {
+                    totalCount
 					edges {
                         cursor
 						node {
