@@ -71,6 +71,12 @@ export class BookTool extends BaseComponent {
         }));
     }
 
+    componentDidMount() {
+        this.props.relay.setVariables({
+            bookPageSize: 6
+        });
+    }
+
     render() {
         return <div className='col-md-12'>
             <BookTable
