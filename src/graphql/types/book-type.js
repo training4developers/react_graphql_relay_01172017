@@ -4,6 +4,7 @@ import {
     GraphQLID, GraphQLFloat
 } from 'graphql';
 
+import { nodeInterface } from './node-interface';
 import { authorType } from './author-type';
 import { categoryType } from './category-type'; 
 
@@ -14,7 +15,8 @@ export const bookType = new GraphQLObjectType({
     fields: () => ({
         id: {
             type: GraphQLID,
-            description: 'Id of book'
+            description: 'Id of book',
+            resolve: ({ id: bookId }) => 'book:' + bookId
         },
         title: {
             type: GraphQLString,
@@ -35,5 +37,6 @@ export const bookType = new GraphQLObjectType({
                 fetch(`${baseUrl}/authors/${authorId}`)
                     .then(res => res.json())
         }
-    })
+    }),
+    interfaces: () => [ nodeInterface ]
 });

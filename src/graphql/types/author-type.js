@@ -3,6 +3,11 @@ import {
     GraphQLObjectType, GraphQLString, GraphQLID, GraphQLList, GraphQLInt
 } from 'graphql';
 
+import { Book } from '../models/book';
+
+import { bookConnectionType } from './book-connection-type';
+
+import { nodeInterface } from './node-interface';
 import { bookType } from './book-type';
 
 export const authorType = new GraphQLObjectType({
@@ -12,7 +17,8 @@ export const authorType = new GraphQLObjectType({
     fields: () => ({
         id: {
             type: GraphQLID,
-            description: 'Id of author'
+            description: 'Id of author',
+            resolve: ({ id: authorId }) => 'author:' + authorId
         },
         firstName: {
             type: GraphQLString,
@@ -33,8 +39,34 @@ export const authorType = new GraphQLObjectType({
             resolve: ({ id: authorId }, _, { baseUrl}) =>
                 fetch(`${baseUrl}/books?authorId=${authorId}`)
                     .then(res => res.json())
-        }
+        },
+        bookConnection: {
+            type: bookConnectionType,
+            description: 'Connection to author\'s books',
+            args: {
+                pageSize: {
+                    type: GraphQLInt,
+                    description: 'Number of edges per page'
+                }
+            },
+            resolve: ({ id: authorId }, { pageSize }, { baseUrl}) =>
+                fetch(`${baseUrl}/books?authorId=${authorId}`)
+                    .then(res => res.json())
+                    .then(booksData => {
 
-    })
+                        const connectionData = {
+                            pageSize
+                        };
+
+                        connectionData.books = booksData.map(bookData =>
+                            Object.assign(new Book(), bookData));
+
+                        return connectionData;
+
+                    })
+        }        
+
+    }),
+    interfaces: () => [ nodeInterface ]
 
 });
